@@ -1,0 +1,24 @@
+<button (click)="initNewUser()">Create New User</button>
+
+<table>
+    <thead>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>User Name</th>
+        <th>Level</th>
+        <th>Experience</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users">
+            <td>{{user.firstName}}</td>
+            <td>{{user.lastName}}</td>
+            <td>{{user.userName}}</td>
+            <td>{{user.level}}</td>
+            <td>{{user.experience}}</td>
+            <td><button (click)="editUser(user)">Edit</button></td>
+        </tr>
+    </tbody>
+</table>
+
+<app-edit-user [thisUser]="userToEdit" (usersUpdated)="updateUserList($event)"></app-edit-user>

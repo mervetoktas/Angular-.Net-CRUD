@@ -1,0 +1,26 @@
+<div *ngIf="thisUser">
+    <h2>{{ thisUser.userName }}</h2>
+    <div>
+        First Name:
+        <input [(ngModel)]="thisUser.firstName" placeholder="First Name" />
+    </div>
+    <div>
+        Last Name:
+        <input [(ngModel)]="thisUser.lastName" placeholder="Last Name" />
+    </div>
+    <div>
+        User Name:
+        <input [(ngModel)]="thisUser.userName" placeholder="User Name" />
+    </div>
+    <div>
+        Level:
+        <input [(ngModel)]="thisUser.level" placeholder="Level" />
+    </div>
+    <div>
+        Experience:
+        <input [(ngModel)]="thisUser.experience" placeholder="Experience" />
+    </div>
+    <button (click)="updateUser(thisUser)" *ngIf="thisUser.id">Save</button>
+    <button (click)="deleteUser(thisUser)" *ngIf="thisUser.id">Delete</button>
+    <button (click)="createUser(thisUser)" *ngIf="!thisUser.id">Create</button>
+</div>
